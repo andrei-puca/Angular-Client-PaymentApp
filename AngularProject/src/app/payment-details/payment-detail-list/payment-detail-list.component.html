@@ -1,0 +1,35 @@
+<div class ="jumbtron">
+    <h1 class="display-4 text-center">Users list</h1>
+     <hr>
+     <div class="row">
+        <div class="col order-last"></div>
+        <div class="col"></div>
+         <div class="col-md-5">
+            <table class="table table-hover">
+                <tr>
+                    <th>Name</th>
+                    <th>Card Number</th>
+                    <th>Expiration Date</th>
+                </tr>
+                <!-- <div *nfIf = ""> </div> -->
+                <tr *ngFor="let pd of service.list">   
+                    <td (click)="populateForm(pd)" contenteditable="">{{pd.CardOwnerName}}</td>
+                    <td (click)="populateForm(pd)">{{pd.CardNumber}}</td>
+                    <td (click)="populateForm(pd)">{{pd.ExpirationDate}}</td>
+                    <td>
+                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.PMId)"></i>
+                        
+                    </td>
+                    <td>
+                        <!-- <button *ngIf="enableEdit && enableEditIndex == i" (click)="enableEdit=false" class="btn page-secondary-action-btn" ng-click="cancel()">Cancel</button>
+                        <button *ngIf="enableEdit && enableEditIndex == i" id="saveBtn" class="btn page-primary-action-btn" (click)="saveSegment()" type="submit">Save</button> -->
+                        <a routerLink= "/edit-user" routerLinkActive="active" class="table-row-action edit-action" *ngIf="!enableEdit"  (click)="populateForm(pd)">
+                          <i class="fa fa-pencil"></i>
+                  </a>
+                    </td>
+                </tr>
+            </table>
+         </div>
+     
+        </div>
+ </div>
