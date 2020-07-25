@@ -10,9 +10,9 @@ import { ToastrService } from 'ngx-toastr';
   ]
 })
 export class PaymentDetailListComponent implements OnInit {
-  editMode : boolean = true; 
+  editMode : boolean = true;
 
-  constructor(private service: PaymentDetailService,
+  constructor(public service: PaymentDetailService,
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
@@ -24,7 +24,7 @@ export class PaymentDetailListComponent implements OnInit {
     console.log("ceva");
 
   }
-  
+
   onDelete(PMId){
     if(confirm('Are you sure you want to delete this record?')){
     this.service.deletePaymentDetail(PMId)

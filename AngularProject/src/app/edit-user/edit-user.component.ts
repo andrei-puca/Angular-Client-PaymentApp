@@ -43,7 +43,7 @@ export class EditUserComponent implements OnInit {
 
 onSubmit(form:NgForm){
     this.updateRecord(form);
-    
+
 }
 
 updateRecord(form:NgForm){
@@ -58,7 +58,6 @@ updateRecord(form:NgForm){
       console.log(err);
     }
   )
-
   this.redirectToUserList();
 }
 
