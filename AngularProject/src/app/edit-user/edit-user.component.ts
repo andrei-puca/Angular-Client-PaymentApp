@@ -47,7 +47,6 @@ onSubmit(form:NgForm){
 }
 
 updateRecord(form:NgForm){
-  console.log("update");
   this.service.putPaymentDetail().subscribe(
     res => {
       this.resetForm(form);
@@ -55,7 +54,6 @@ updateRecord(form:NgForm){
       this.service.refreshList();
     },
     err => {
-      console.log(err);
     }
   )
   this.redirectToUserList();

@@ -21,8 +21,6 @@ export class PaymentDetailListComponent implements OnInit {
 
   populateForm(pd:PaymentDetail){
     this.service.formData = Object.assign({},pd);
-    console.log("ceva");
-
   }
 
   onDelete(PMId){
@@ -33,7 +31,6 @@ export class PaymentDetailListComponent implements OnInit {
       this.toastr.warning('Deleted successfully','Payment detail register');
     },
       err => {
-        console.log(err);
       })
     }
   }

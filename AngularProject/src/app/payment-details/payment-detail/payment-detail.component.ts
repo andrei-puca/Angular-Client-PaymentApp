@@ -54,13 +54,11 @@ insertRecord(form:NgForm){
       this.service.refreshList();
     },
     err => {
-      console.log(err);
     }
   )
 }
 
 updateRecord(form:NgForm){
-  console.log("update");
   this.service.putPaymentDetail().subscribe(
     res => {
       this.resetForm(form);
@@ -68,7 +66,6 @@ updateRecord(form:NgForm){
       this.service.refreshList();
     },
     err => {
-      console.log(err);
     }
   )
 }
