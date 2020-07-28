@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { LoginUsers } from '../login-users/login-users.model';
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,7 @@ export class LoginUserService {
   list : LoginUsers[];
 
   constructor(private http:HttpClient) { }
-  
+
 //   postPaymentDetail(){
 //     return this.http.post(this.rootURL+'/PaymentDetail',this.formData);
 //   }
@@ -27,7 +27,8 @@ export class LoginUserService {
 
 
 refreshList(){
-  this.http.get(this.rootURL+'/users/getadmins')
+  const token = localStorage.getItem('userToken');
+  this.http.get(this.rootURL+'/users/getadmins', {headers: new HttpHeaders().set('token',token)})
   .toPromise()
   .then(res => this.list = res as LoginUsers[]);
 }
