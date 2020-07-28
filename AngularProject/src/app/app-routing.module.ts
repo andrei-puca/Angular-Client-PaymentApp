@@ -8,12 +8,13 @@ import { AdminComponent } from '../app/admin/admin.component';
 import { LoginComponent } from '../app/login/login.component';
 import { AuthGuard } from '../app/_helper/auth.guard';
 import { Role } from '../app/_models/role';
-
+import {LoginUsersComponent} from '../app/login-users/login-users.component';
 
 const routes: Routes = [
   {path: 'add-user', component:PaymentDetailComponent},
   {path: 'show-users', component:PaymentDetailListComponent},
   {path: 'edit-user', component:EditUserComponent},
+  {path: 'login-users', component:LoginUsersComponent},
   {
         path: '',
         component: HomeComponent,
