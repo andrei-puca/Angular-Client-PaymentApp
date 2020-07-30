@@ -21,6 +21,8 @@ import { AdminComponent } from './admin/admin.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LoginUsersComponent } from './login-users/login-users.component';
+import { AddLoginUsersComponent } from './login-users/add-login-users/add-login-users.component';
+import { EditLoginUsersComponent } from './login-users/edit-login-users/edit-login-users.component';
 
 
 
@@ -37,7 +39,9 @@ import { LoginUsersComponent } from './login-users/login-users.component';
     AdminComponent,
     HomeComponent,
     LoginComponent,
-    LoginUsersComponent
+    LoginUsersComponent,
+    AddLoginUsersComponent,
+    EditLoginUsersComponent
   ],
   imports: [
     BrowserModule,

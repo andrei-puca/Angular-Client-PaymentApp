@@ -1,12 +1,11 @@
 <!-- nav -->
-<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser">
-  <div class="navbar-nav">
+<nav class="navbar navbar-expand navbar-dark bg-dark" *ngIf="currentUser" style="float: none!Important;">
+  <div class="navbar-nav" >
       <a class="nav-item nav-link" routerLink="/">Home</a>
       <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">AdminInfo</a>
-      <a class="nav-item nav-link" routerLink="/add-user" *ngIf="isAdmin">Add user</a>
-      <a class="nav-item nav-link" routerLink="/show-users" *ngIf="isAdmin">Show users</a>
-      <a class="nav-item nav-link" routerLink="/login-users" *ngIf="isAdmin">Show admins</a>
-      <a class="nav-item nav-link" (click)="logout()">Logout</a>
+      <a class="nav-item nav-link" routerLink="/show-customers" *ngIf="isAdmin">Customers</a>
+      <a class="nav-item nav-link" routerLink="/login-users" *ngIf="isAdmin">Users</a>
+      <li class="nav-item nav-link" (click)="logout()"> <span class='logout'><i class="fas fa-sign-out-alt"></i>Logout</span> </li>
   </div>
 </nav>
 

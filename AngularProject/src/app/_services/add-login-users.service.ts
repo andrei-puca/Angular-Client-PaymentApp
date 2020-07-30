@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { LoginUsers } from '../login-users/login-users.model';
-import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { User } from '../_models/user';
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginUserService {
-  formData:LoginUsers;
+export class AddLoginUsersService {
+  formData:User;
   readonly rootURL = 'http://localhost:54607'
-  list : LoginUsers[];
+  list : User[];
 
   constructor(private http:HttpClient) { }
 
@@ -23,14 +23,5 @@ export class LoginUserService {
   Delete(id){
     return this.http.delete(this.rootURL+'/users/'+ id);
   }
-
-
-refreshList(){
-  const token = localStorage.getItem('userToken');
-  this.http.get(this.rootURL+'/users/getadmins', {headers: new HttpHeaders().set('token',token)})
-  .toPromise()
-  .then(res => this.list = res as LoginUsers[]);
-}
-
 
 }

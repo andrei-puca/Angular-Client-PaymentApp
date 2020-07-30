@@ -1,0 +1,89 @@
+<div class="jumbtron">
+  <h1 class="display-4 text-center">Edit login user</h1>
+  <hr>
+  <div class="row">
+    <div class="col order-last"></div>
+    <div class="col"></div>
+    <div class="col-md-5">
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+        <input type="hidden" name="Id" [value]="service.formData.Id">
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-user" [class.green-icon]="FirstName.valid"
+                  [class.red-icon]="FirstName.invalid && FirstName.touched"></i>
+              </div>
+            </div>
+            <input name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName"
+              class="form-control" placeholder="First name" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-credit-card" [class.green-icon]="LastName.valid"
+                  [class.red-icon]="LastName.invalid && LastName.touched"></i>
+              </div>
+            </div>
+            <input name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName"
+              class="form-control" placeholder="Last name" required maxlength="16" minlength="3">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-credit-card" [class.green-icon]="Username.valid"
+                  [class.red-icon]="Username.invalid && Username.touched"></i>
+              </div>
+            </div>
+            <input name="Username" #Username="ngModel" [(ngModel)]="service.formData.Username"
+              class="form-control" placeholder="Username" required maxlength="16" minlength="3">
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <div class="input-group-text bg-white">
+                <i class="fas fa-credit-card" [class.green-icon]="Password.valid"
+                  [class.red-icon]="Password.invalid && Password.touched"></i>
+              </div>
+            </div>
+            <input name="Password" #Password="ngModel" [(ngModel)]="service.formData.Password"
+              class="form-control" type="password" placeholder="Password" required maxlength="16" minlength="4">
+          </div>
+        </div>
+
+        <div class="form-group">
+        <label for="Role">Role</label>
+        <select class="form-control" name="Admin" #Role="ngModel" value=Role.Admin [(ngModel)]="service.formData.Role">
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+        </select>
+      </div>
+        <!-- <div class="form-group">
+          <label for="Role">Role</label>
+          <select class="form-control" id="Role">
+            <option name="Admin" #Role="ngModel" value=Role.Admin [(ngModel)]="service.formData.Role">Admin</option>
+            <option [value]="Role" name="Role" #Role="ngModel" [(ngModel)]="service.formData.Role"
+            class="form-control" placeholder="Role" required>User</option>
+          </select>
+        </div> -->
+
+
+
+
+        <div class="form-group">
+          <button class="btn btn-success btn-lg btn-block" type="submit" [disabled]="form.invalid"><i
+              class="fas fa-file-export"></i>Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

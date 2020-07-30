@@ -26,3 +26,52 @@ margin-bottom: 15px;
 table tr:hover{
     cursor:pointer;
 }
+
+.fa {
+  margin: auto; display: block;
+  cursor:pointer;
+}
+
+button {
+
+  background:transparent;
+  border: none;
+}
+button:active{
+  outline:none;
+}
+
+td.myClass{
+  margin-top: 10px;
+  border-top:none;
+  cursor: default;
+  background-color: transparent;
+}
+
+th.myClass{
+  border-top:none;
+}
+
+
+
+td.myClass:hover{
+ background: transparent;
+}
+tr.myClass:hover{
+  background: transparent;
+ }
+
+ .buttonSize {
+   font-size: small;
+ }
+
+ span.custom{
+   font-weight: 300;
+ }
+
+ span.logout{
+   text-align: right;
+   margin-left: 1000px;
+
+ }
+

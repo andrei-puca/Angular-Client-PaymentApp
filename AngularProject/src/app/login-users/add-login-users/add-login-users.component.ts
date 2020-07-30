@@ -1,18 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { PaymentDetailService } from 'src/app/shared/payment-detail.service';
+import { AddLoginUsersService } from 'src/app/_services/add-login-users.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { Role } from 'src/app/_models/role';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-payment-detail',
-  templateUrl: './payment-detail.component.html',
+  selector: 'app-add-login-users',
+  templateUrl: './add-login-users.component.html',
   styles: [
+
   ]
 })
-export class PaymentDetailComponent implements OnInit {
+export class AddLoginUsersComponent implements OnInit {
 
-  constructor(public service:PaymentDetailService, private toastr: ToastrService, private router: Router) { }
+  constructor(public service:AddLoginUsersService, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit() {
     if (!this.service.formData) {
@@ -28,52 +30,56 @@ export class PaymentDetailComponent implements OnInit {
     // }
   }
 
+
   resetForm(form?: NgForm) {
+
     if (form != null)
       form.form.reset();
     this.service.formData = {
-      PMId: 0,
-      CardOwnerName: '',
-      CardNumber: '',
-      ExpirationDate: '',
-      CVV: ''
+      Id: 0,
+      FirstName: '',
+      LastName: '',
+      Username: '',
+      Password: '',
+      Role: Role.User
     }
   }
 
 onSubmit(form:NgForm){
-  if(this.service.formData.PMId == 0)
+  if(this.service.formData.Id == 0)
     this.insertRecord(form);
   else
     this.updateRecord(form);
 }
 
 insertRecord(form:NgForm){
-  this.service.postPaymentDetail().subscribe(
+  this.service.Create().subscribe(
     res => {
       this.resetForm(form);
       this.toastr.success('Submitted successfully','User added');
-      this.service.refreshList();
+      //this.service.refreshList();
     },
     err => {
     }
   )
- this.redirectToCustomerList();
+  this.redirectToUserList();
 }
 
 updateRecord(form:NgForm){
-  this.service.putPaymentDetail().subscribe(
+  this.service.Update().subscribe(
     res => {
       this.resetForm(form);
       this.toastr.info('Submitted successfully','User added');
-      this.service.refreshList();
+      //this.service.refreshList();
     },
     err => {
     }
   )
-}
-redirectToCustomerList(){
-  this.router.navigate(['/show-customers']);
+  this.redirectToUserList();
 }
 
+redirectToUserList(){
+  this.router.navigate(['/login-users']);
+}
 
 }

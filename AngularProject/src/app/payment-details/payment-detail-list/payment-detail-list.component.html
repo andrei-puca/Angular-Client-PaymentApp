@@ -1,35 +1,41 @@
-<div class ="jumbtron">
-    <h1 class="display-4 text-center">Users list</h1>
-     <hr>
-     <div class="row">
-        <div class="col order-last"></div>
-        <div class="col"></div>
-         <div class="col-md-5">
-            <table class="table table-hover">
-                <tr>
-                    <th>Name</th>
-                    <th>Card Number</th>
-                    <th>Expiration Date</th>
-                </tr>
-                <!-- <div *nfIf = ""> </div> -->
-                <tr *ngFor="let pd of service.list">   
-                    <td (click)="populateForm(pd)" contenteditable="">{{pd.CardOwnerName}}</td>
-                    <td (click)="populateForm(pd)">{{pd.CardNumber}}</td>
-                    <td (click)="populateForm(pd)">{{pd.ExpirationDate}}</td>
-                    <td>
-                        <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.PMId)"></i>
-                        
-                    </td>
-                    <td>
-                        <!-- <button *ngIf="enableEdit && enableEditIndex == i" (click)="enableEdit=false" class="btn page-secondary-action-btn" ng-click="cancel()">Cancel</button>
-                        <button *ngIf="enableEdit && enableEditIndex == i" id="saveBtn" class="btn page-primary-action-btn" (click)="saveSegment()" type="submit">Save</button> -->
-                        <a routerLink= "/edit-user" routerLinkActive="active" class="table-row-action edit-action" *ngIf="!enableEdit"  (click)="populateForm(pd)">
-                          <i class="fa fa-pencil"></i>
-                  </a>
-                    </td>
-                </tr>
-            </table>
-         </div>
-     
-        </div>
- </div>
+<div class="jumbtron">
+  <h1 class="display-4 text-center">Customers list</h1>
+  <hr>
+  <div class="row">
+    <div class="col order-last"></div>
+    <div class="col"></div>
+    <div class="col-md-5">
+      <table class="table table-hover" style="width: 110%">
+        <tr>
+          <th class="myClass">Name</th>
+          <th class="myClass">Card Number</th>
+          <th style="widows: 130%;" class="myClass" >Expiration Date</th>
+        </tr>
+        <!-- <div *nfIf = ""> </div> -->
+        <tr *ngFor="let pd of service.list">
+          <td (click)="populateForm(pd)" contenteditable="">{{pd.CardOwnerName}}</td>
+          <td (click)="populateForm(pd)">{{pd.CardNumber}}</td>
+          <td  (click)="populateForm(pd)" contenteditable="">{{pd.ExpirationDate}}</td>
+          <td>
+            <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.PMId)"></i>
+
+          </td>
+          <td>
+            <a routerLink="/edit-customer" routerLinkActive="active" class="table-row-action edit-action"
+              (click)="populateForm(pd)">
+              <i class="fa fa-pencil"></i>
+            </a>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+  <h1 class="display-4 text-center">
+    <button routerLink="/add-customer" routerLinkActive="active">
+      <td class="myClass"><i class="fa fa-plus-circle" aria-hidden="true"><span class="custom"
+            style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+            Add customer</span></i></td>
+    </button>
+  </h1>
+</div>

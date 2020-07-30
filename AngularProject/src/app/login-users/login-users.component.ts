@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   ]
 })
 export class LoginUsersComponent implements OnInit {
-  editMode : boolean = true;
+  editMode: boolean = true;
 
   constructor(public service: LoginUserService,
     private toastr: ToastrService) { }
@@ -19,11 +19,22 @@ export class LoginUsersComponent implements OnInit {
     this.service.refreshList();
   }
 
-  populateForm(pd:LoginUsers){
-    this.service.formData = Object.assign({},pd);
+  populateForm(pd: LoginUsers) {
+    this.service.formData = Object.assign({}, pd);
   }
 
-  
+  onDelete(Id){
+    if(confirm('Are you sure you want to delete this record?')){
+    this.service.Delete(Id)
+    .subscribe(res => {
+      this.service.refreshList();
+      this.toastr.warning('Deleted successfully','Payment detail register');
+    },
+      err => {
+      })
+    }
+  }
+
 
 
 }

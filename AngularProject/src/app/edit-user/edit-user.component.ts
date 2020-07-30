@@ -56,11 +56,11 @@ updateRecord(form:NgForm){
     err => {
     }
   )
-  this.redirectToUserList();
+  this.redirectToCustomerList();
 }
 
-redirectToUserList(){
-  this.router.navigate(['/show-users']);
+redirectToCustomerList(){
+  this.router.navigate(['/show-customers']);
 }
 
 
