@@ -16,6 +16,7 @@ export class AddLoginUsersComponent implements OnInit {
 
   constructor(public service:AddLoginUsersService, private toastr: ToastrService, private router: Router) { }
 
+
   ngOnInit() {
     if (!this.service.formData) {
         this.resetForm();
@@ -41,19 +42,33 @@ export class AddLoginUsersComponent implements OnInit {
       LastName: '',
       Username: '',
       Password: '',
-      Role: Role.User
+      Role: Role.Admin
+    }
+    this.service.formDataSecond = {
+      AccountType: '',
+      UserId: 1,
     }
   }
 
 onSubmit(form:NgForm){
   if(this.service.formData.Id == 0)
     this.insertRecord(form);
+
   else
     this.updateRecord(form);
 }
 
 insertRecord(form:NgForm){
   this.service.Create().subscribe(
+    res => {
+      this.resetForm(form);
+      this.toastr.success('Submitted successfully','User added');
+      //this.service.refreshList();
+    },
+    err => {
+    }
+  )
+  this.service.AddInPaymentDetails().subscribe(
     res => {
       this.resetForm(form);
       this.toastr.success('Submitted successfully','User added');

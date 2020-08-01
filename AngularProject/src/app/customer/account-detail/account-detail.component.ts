@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { PaymentDetailService } from 'src/app/shared/payment-detail.service';
-import { PaymentDetail } from './../../shared/payment-detail.model';
 import { ToastrService } from 'ngx-toastr';
+import { PaymentDetailService } from 'src/app/shared/payment-detail.service';
+import { PaymentDetail } from 'src/app/shared/payment-detail.model';
 
 @Component({
-  selector: 'app-payment-detail-list',
-  templateUrl: './payment-detail-list.component.html',
-  styles: [
-  ]
+  selector: 'app-account-detail',
+  templateUrl: './account-detail.component.html',
+  styleUrls: ['./account-detail.component.css']
 })
-export class PaymentDetailListComponent implements OnInit {
+export class AccountDetailComponent implements OnInit {
   editMode : boolean = true;
 
   constructor(public service: PaymentDetailService,
@@ -20,7 +19,6 @@ export class PaymentDetailListComponent implements OnInit {
   }
 
   populateForm(pd:PaymentDetail){
-
     this.service.formData = Object.assign({},pd);
   }
 
@@ -38,4 +36,3 @@ export class PaymentDetailListComponent implements OnInit {
 
 
 }
-

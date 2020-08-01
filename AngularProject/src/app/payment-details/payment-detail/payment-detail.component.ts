@@ -36,7 +36,10 @@ export class PaymentDetailComponent implements OnInit {
       CardOwnerName: '',
       CardNumber: '',
       ExpirationDate: '',
-      CVV: ''
+      CVV: '',
+      Balance: 0,
+      AccountType: '',
+
     }
   }
 

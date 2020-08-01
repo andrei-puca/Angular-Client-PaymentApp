@@ -7,16 +7,16 @@
     <div class="col-md-5">
       <table class="table table-hover" style="width: 110%">
         <tr>
-          <th class="myClass">Name</th>
+          <th class="myClass">Account type</th>
           <th class="myClass">Card Number</th>
           <th style="widows: 130%;" class="myClass" >Expiration Date</th>
           <th class="myClass">Balance</th>
         </tr>
         <!-- <div *nfIf = ""> </div> -->
         <tr *ngFor="let pd of service.list">
-          <td (click)="populateForm(pd)" contenteditable="">{{pd.CardOwnerName}}</td>
+          <td (click)="populateForm(pd)" contenteditable="">{{pd.AccountType}}</td>
           <td (click)="populateForm(pd)">{{pd.CardNumber}}</td>
-          <td (click)="populateForm(pd)" contenteditable="">{{pd.ExpirationDate}}</td>
+          <td  (click)="populateForm(pd)" contenteditable="">{{pd.ExpirationDate}}</td>
           <td (click)="populateForm(pd)">{{pd.Balance}}</td>
           <td>
             <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.PMId)"></i>

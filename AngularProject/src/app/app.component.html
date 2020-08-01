@@ -5,6 +5,7 @@
       <a class="nav-item nav-link" routerLink="/admin" *ngIf="isAdmin">AdminInfo</a>
       <a class="nav-item nav-link" routerLink="/show-customers" *ngIf="isAdmin">Customers</a>
       <a class="nav-item nav-link" routerLink="/login-users" *ngIf="isAdmin">Users</a>
+      <a class="nav-item nav-link" routerLink="/user-accounts" *ngIf="isUser">My accounts</a>
       <li class="nav-item nav-link" (click)="logout()"> <span class='logout'><i class="fas fa-sign-out-alt"></i>Logout</span> </li>
   </div>
 </nav>

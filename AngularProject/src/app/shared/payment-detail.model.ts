@@ -4,4 +4,6 @@ export class PaymentDetail {
     CardNumber: string;
     ExpirationDate: string;
     CVV: string;
+    Balance: number;
+    AccountType: string;
 }

@@ -23,8 +23,14 @@ export class AppComponent {
       this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
+
+
   get isAdmin() {
       return this.currentUser && this.currentUser.Role === Role.Admin;
+  }
+
+  get isUser() {
+    return this.currentUser && this.currentUser.Role === Role.User;
   }
 
   logout() {

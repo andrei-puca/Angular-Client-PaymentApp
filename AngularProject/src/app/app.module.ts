@@ -23,6 +23,7 @@ import { LoginComponent } from './login/login.component';
 import { LoginUsersComponent } from './login-users/login-users.component';
 import { AddLoginUsersComponent } from './login-users/add-login-users/add-login-users.component';
 import { EditLoginUsersComponent } from './login-users/edit-login-users/edit-login-users.component';
+import { AccountDetailComponent } from './customer/account-detail/account-detail.component';
 
 
 
@@ -41,7 +42,8 @@ import { EditLoginUsersComponent } from './login-users/edit-login-users/edit-log
     LoginComponent,
     LoginUsersComponent,
     AddLoginUsersComponent,
-    EditLoginUsersComponent
+    EditLoginUsersComponent,
+    AccountDetailComponent
   ],
   imports: [
     BrowserModule,

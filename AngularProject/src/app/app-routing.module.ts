@@ -11,6 +11,7 @@ import { Role } from '../app/_models/role';
 import {LoginUsersComponent} from '../app/login-users/login-users.component';
 import { AddLoginUsersComponent } from './login-users/add-login-users/add-login-users.component';
 import { EditLoginUsersComponent } from './login-users/edit-login-users/edit-login-users.component';
+import { AccountDetailComponent } from './customer/account-detail/account-detail.component';
 
 const routes: Routes = [
   {path: 'add-customer', component:PaymentDetailComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'login-users', component:LoginUsersComponent, canActivate:[AuthGuard]},
   {path: 'add-login-users', component:AddLoginUsersComponent, canActivate:[AuthGuard]},
   {path: 'edit-login-users', component:EditLoginUsersComponent, canActivate:[AuthGuard]},
+  {path: 'user-accounts', component: AccountDetailComponent},
 
   {
         path: '',

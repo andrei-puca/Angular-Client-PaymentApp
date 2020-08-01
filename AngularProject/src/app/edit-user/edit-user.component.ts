@@ -37,7 +37,9 @@ export class EditUserComponent implements OnInit {
       CardOwnerName: '',
       CardNumber: '',
       ExpirationDate: '',
-      CVV: ''
+      CVV: '',
+      Balance: 0,
+      AccountType: '',
     }
   }
 
