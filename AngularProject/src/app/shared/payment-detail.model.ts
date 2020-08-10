@@ -6,4 +6,5 @@ export class PaymentDetail {
     CVV: string;
     Balance: number;
     AccountType: string;
+    UserId: number;
 }

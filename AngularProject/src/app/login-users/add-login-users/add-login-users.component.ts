@@ -47,6 +47,8 @@ export class AddLoginUsersComponent implements OnInit {
     this.service.formDataSecond = {
       AccountType: '',
       UserId: 1,
+      Balance: 1
+
     }
   }
 
@@ -60,15 +62,6 @@ onSubmit(form:NgForm){
 
 insertRecord(form:NgForm){
   this.service.Create().subscribe(
-    res => {
-      this.resetForm(form);
-      this.toastr.success('Submitted successfully','User added');
-      //this.service.refreshList();
-    },
-    err => {
-    }
-  )
-  this.service.AddInPaymentDetails().subscribe(
     res => {
       this.resetForm(form);
       this.toastr.success('Submitted successfully','User added');

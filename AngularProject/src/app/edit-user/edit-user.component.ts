@@ -11,6 +11,7 @@ import { browser } from 'protractor';
   styles: [
   ]
 })
+
 export class EditUserComponent implements OnInit {
 
   constructor(public service:PaymentDetailService, private toastr: ToastrService, private router: Router) { }
@@ -18,6 +19,7 @@ export class EditUserComponent implements OnInit {
   ngOnInit() {
     if (!this.service.formData) {
         this.resetForm();
+
 
     }
     // this.service.formData = {
@@ -30,6 +32,8 @@ export class EditUserComponent implements OnInit {
   }
 
   resetForm(form?: NgForm) {
+    const values = JSON.parse(localStorage.getItem("currentUser")['Id']);
+    console.log('retrievedObject: ',values);
     if (form != null)
       form.form.reset();
     this.service.formData = {
@@ -40,6 +44,7 @@ export class EditUserComponent implements OnInit {
       CVV: '',
       Balance: 0,
       AccountType: '',
+      UserId: values,
     }
   }
 

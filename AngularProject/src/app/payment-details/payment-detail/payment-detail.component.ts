@@ -29,6 +29,9 @@ export class PaymentDetailComponent implements OnInit {
   }
 
   resetForm(form?: NgForm) {
+
+    var getFruits = JSON.parse( localStorage.getItem('currentUser') );
+    console.log(getFruits.Id);
     if (form != null)
       form.form.reset();
     this.service.formData = {
@@ -39,6 +42,7 @@ export class PaymentDetailComponent implements OnInit {
       CVV: '',
       Balance: 0,
       AccountType: '',
+      UserId: getFruits.Id,
 
     }
   }
