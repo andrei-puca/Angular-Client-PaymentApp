@@ -15,7 +15,7 @@ export class AccountDetailComponent implements OnInit {
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
-    this.service.refreshList();
+    this.service.getCurrentUserAccounts();
   }
 
   populateForm(pd:PaymentDetail){

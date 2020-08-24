@@ -33,5 +33,11 @@ refreshList(){
   .then(res => this.list = res as PaymentDetail[]);
 }
 
+getCurrentUserAccounts(){
+  this.http.get(this.rootURL+'/PaymentDetail/useraccounts')
+  .toPromise()
+  .then(res => this.list = res as PaymentDetail[]);
+}
+
 
 }

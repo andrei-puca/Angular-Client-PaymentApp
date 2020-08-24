@@ -32,5 +32,13 @@ refreshList(){
   .then(res => this.list = res as LoginUsers[]);
 }
 
+getOnlyUsers(){
+  const token = localStorage.getItem('userToken');
+  this.http.get(this.rootURL+'/users?role=User', {headers: new HttpHeaders().set('token',token)})
+  .toPromise()
+  .then(res => this.list = res as LoginUsers[]);
+}
+
+
 
 }
