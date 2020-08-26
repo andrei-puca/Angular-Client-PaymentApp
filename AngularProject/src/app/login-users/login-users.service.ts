@@ -10,6 +10,8 @@ export class LoginUserService {
   readonly rootURL = 'http://localhost:54607'
   list : LoginUsers[];
 
+
+
   constructor(private http:HttpClient) { }
 
   Create(){
@@ -27,11 +29,20 @@ export class LoginUserService {
 
 refreshList(){
   const token = localStorage.getItem('userToken');
-  this.http.get(this.rootURL+'/users/getadmins', {headers: new HttpHeaders().set('token',token)})
+  this.http.get(this.rootURL+'/users', {headers: new HttpHeaders().set('token',token)})
   .toPromise()
   .then(res => this.list = res as LoginUsers[]);
+ 
+  
+<<<<<<< Updated upstream
+=======
+
+}
+>>>>>>> Stashed changes
+
 }
 
+<<<<<<< Updated upstream
 getOnlyUsers(){
   const token = localStorage.getItem('userToken');
   this.http.get(this.rootURL+'/users?role=User', {headers: new HttpHeaders().set('token',token)})
@@ -41,4 +52,6 @@ getOnlyUsers(){
 
 
 
+=======
+>>>>>>> Stashed changes
 }

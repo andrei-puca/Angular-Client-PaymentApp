@@ -7,17 +7,19 @@
     <div class="col-md-5">
       <table class="table table-hover" style="width: 110%">
         <tr>
+          <th class="myClass">First Name</th>
+          <th class="myClass">Last Name</th>
           <th class="myClass">Username</th>
-          <th class="myClass">First name</th>
-          <th style="widows: 130%;" class="myClass" >Last name</th>
           <th class="myClass">Role</th>
+          <th class="myClass">Created at</th> 
         </tr>
         <!-- <div *nfIf = ""> </div> -->
         <tr *ngFor="let pd of service.list">
-          <td (click)="populateForm(pd)" contenteditable="">{{pd.Username}}</td>
-          <td (click)="populateForm(pd)">{{pd.FirstName}}</td>
-          <td (click)="populateForm(pd)" contenteditable="">{{pd.LastName}}</td>
-          <td (click)="populateForm(pd)">{{pd.Role}}</td>
+          <td (click)="populateForm(pd)" >{{pd.FirstName}}</td>
+          <td (click)="populateForm(pd)" >{{pd.LastName}}</td>
+          <td (click)="populateForm(pd)" >{{pd.Username}}</td>
+          <td (click)="populateForm(pd)" >{{pd.Role}}</td>
+          <td (click)="populateForm(pd)" >{{pd.CreationDate}}</td>
           <td>
             <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.Id)"></i>
 

@@ -40,7 +40,8 @@ export class EditLoginUsersComponent implements OnInit {
       LastName: '',
       Username: '',
       Password: '',
-      Role: Role.User
+      Role: Role.User,
+      CreationDate: ''
     }
   }
 
